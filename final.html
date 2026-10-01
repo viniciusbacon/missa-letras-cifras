@@ -35,26 +35,7 @@
     </div>
   </div>
 
-  <div class="aviso">Cifra editável — toque em "Editar cifra" pra mover os acordes de lugar. As mudanças ficam salvas neste navegador.</div>
-
-  <div style="text-align:center;">
-    <button class="botao-editar" type="button">✏️ Editar cifra</button>
-  </div>
-
-  <div class="editor-wrap">
-    <textarea class="editor-textarea" spellcheck="false"></textarea>
-    <div class="editor-botoes">
-      <button class="editor-restaurar" type="button">↺ Restaurar original</button>
-      <button class="editor-copiar" type="button">📋 Copiar texto</button>
-      <button class="editor-baixar" type="button">⬇️ Baixar .txt</button>
-    </div>
-    <div class="editor-status"></div>
-    <div class="editor-ajuda">
-      Escreva o acorde entre colchetes bem antes da sílaba onde ele entra, tipo <code>[D]Tua presença</code>.
-      Pra mudar de lugar, é só mover o colchete dentro do texto. Linha começando com <code>## </code> vira
-      título de seção (Refrão, Verso...), linha em branco separa os blocos.
-    </div>
-  </div>
+  <div class="aviso">Cifra editável — toque em "Editar cifra" no fim da página pra mover os acordes de lugar. As mudanças ficam salvas neste navegador.</div>
 
   <div class="letra" id="letra-render"></div>
 
@@ -84,6 +65,27 @@
 ## (Repete Verso → Pré-refrão → Refrão, depois Ponte e fecha)
 [A9]Tua graça me basta, [C#m]Teu amor me [B9]sustenta... [F#m]eu [A9]seguirei, [E]Senhor.
 </script>
+
+  <div style="text-align:center;">
+    <button class="botao-editar" type="button">✏️ Editar cifra</button>
+  </div>
+
+  <div class="editor-wrap">
+    <textarea class="editor-textarea" spellcheck="false"></textarea>
+    <div class="editor-botoes">
+      <button class="editor-restaurar" type="button">↺ Restaurar original</button>
+      <button class="editor-copiar" type="button">📋 Copiar texto</button>
+      <button class="editor-baixar" type="button">⬇️ Baixar .txt</button>
+      <button class="editor-solicitar" type="button">📮 Solicitar correção</button>
+    </div>
+    <div class="editor-status"></div>
+    <div class="editor-ajuda">
+      Escreva o acorde entre colchetes bem antes da sílaba onde ele entra, tipo <code>[D]Tua presença</code>.
+      Pra mudar de lugar, é só mover o colchete dentro do texto. Linha começando com <code>## </code> vira
+      título de seção (Refrão, Verso...), linha em branco separa os blocos. O botão <strong>Solicitar correção</strong>
+      abre uma issue no GitHub já preenchida com o texto editado, pra eu revisar e publicar pra todo mundo.
+    </div>
+  </div>
 
   <div class="nav-musica">
     <a class="inicio" href="index.html">🏠</a>

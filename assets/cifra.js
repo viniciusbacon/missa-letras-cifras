@@ -112,6 +112,7 @@
     var btnRestaurar = document.querySelector('.editor-restaurar');
     var btnCopiar = document.querySelector('.editor-copiar');
     var btnBaixar = document.querySelector('.editor-baixar');
+    var btnSolicitar = document.querySelector('.editor-solicitar');
 
     if(textarea) textarea.value = textoAtual;
 
@@ -173,6 +174,30 @@
         a.click();
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
+      });
+    }
+
+    if(btnSolicitar){
+      btnSolicitar.addEventListener('click', function(){
+        var texto = textarea ? textarea.value : obterTextoAtual();
+        var original = obterTextoOriginal();
+        var tituloMusica = document.querySelector('.cabecalho-musica h2');
+        tituloMusica = tituloMusica ? tituloMusica.textContent.trim() : slugAtual();
+
+        var mudou = texto !== original;
+        var titulo = 'Correção de cifra: ' + tituloMusica;
+        var corpo = 'Sugestão de correção pra cifra desta música, feita direto no site (' + location.href + ').\n\n';
+
+        if(mudou){
+          corpo += '**Texto sugerido (editado):**\n```\n' + texto + '\n```\n\n**Texto original pra comparar:**\n```\n' + original + '\n```\n';
+        } else {
+          corpo += 'Não editei nada ainda, só quero avisar que tem algo errado nesta cifra — segue o texto atual pra referência:\n```\n' + texto + '\n```\n\n(Descreva aqui o que precisa corrigir.)\n';
+        }
+
+        var url = 'https://github.com/viniciusbacon/missa-letras-cifras/issues/new?title=' +
+          encodeURIComponent(titulo) + '&body=' + encodeURIComponent(corpo);
+        window.open(url, '_blank');
+        status('Abrindo o GitHub pra enviar a correção...');
       });
     }
   });

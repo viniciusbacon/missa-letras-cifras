@@ -35,7 +35,37 @@
     </div>
   </div>
 
-  <div class="aviso">Cifra editável — toque em "Editar cifra" pra mover os acordes de lugar. As mudanças ficam salvas neste navegador.</div>
+  <div class="aviso">Cifra editável — toque em "Editar cifra" no fim da página pra mover os acordes de lugar. As mudanças ficam salvas neste navegador.</div>
+
+  <div class="letra" id="letra-render"></div>
+
+<script type="text/plain" id="cifra-original">
+## Introdução
+[D] [Bm] [A] [D] [Bm] [A] [D] [Bm] [A] [D] [Bm] [A]
+
+## Refrão (2x)
+[D]Hoje é [G]dia de [D]celebração! [G]
+[D]Vamos [G]cantar [C]aleluia, [A]aleluia!
+[D]Hoje é [G]dia de [D]celebração, [G]é dia de [D]festa
+[G]O céu [Em]inteiro está [A]orando por [D]nós [Bm][A]
+
+## Verso
+[F#m]Alegrei-me [G]quando me disseram
+[Em]Vamos para a [D/F#]casa do [G]Senhor, [G#°]pois ele nos [A4]espera [A]
+[F#m]Alegrei-me [G]quando me disseram
+[Em]Vamos para a [D/F#]casa do [G]Senhor, [G#°]pois ele nos [A4]espera [A][A#°]
+
+[Bm]De braços [Bm7M]abertos [Bm7]com uma benção [E7]especial pra nós
+
+## Ponte
+[G]Então derrama [D/F#]sobre nós o [Em]teu [A4]Espírito [A]Senhor
+[G]Então derrama [D/F#]sobre este [Em]lugar a [A]tua unção [D]e o [Bm]teu [A]poder
+
+([D] [Bm] [A])
+
+## (Repete: Refrão 2x → Verso → Ponte)
+[D]A tua unção e o teu poder [Bm] [A]
+</script>
 
   <div style="text-align:center;">
     <button class="botao-editar" type="button">✏️ Editar cifra</button>
@@ -47,37 +77,16 @@
       <button class="editor-restaurar" type="button">↺ Restaurar original</button>
       <button class="editor-copiar" type="button">📋 Copiar texto</button>
       <button class="editor-baixar" type="button">⬇️ Baixar .txt</button>
+      <button class="editor-solicitar" type="button">📮 Solicitar correção</button>
     </div>
     <div class="editor-status"></div>
     <div class="editor-ajuda">
       Escreva o acorde entre colchetes bem antes da sílaba onde ele entra, tipo <code>[D]Tua presença</code>.
       Pra mudar de lugar, é só mover o colchete dentro do texto. Linha começando com <code>## </code> vira
-      título de seção (Refrão, Verso...), linha em branco separa os blocos.
+      título de seção (Refrão, Verso...), linha em branco separa os blocos. O botão <strong>Solicitar correção</strong>
+      abre uma issue no GitHub já preenchida com o texto editado, pra eu revisar e publicar pra todo mundo.
     </div>
   </div>
-
-  <div class="letra" id="letra-render"></div>
-
-<script type="text/plain" id="cifra-original">
-## Refrão
-[Bm]Hoje é dia de celebração!
-[G]Vamos cantar [Em]Aleluia, Aleluia!
-[D]Hoje é dia de celebração, é dia de [A]festa,
-[F#m]O céu inteiro está [E7]orando por [Bm]nós!
-
-## Verso
-[G]Alegrei-me quando me disseram:
-[D]Vamos para a casa do Senhor, pois Ele nos [A]espera!
-[G]De braços abertos, com uma benção [F#m]especial pra [E7]nós.
-
-## Ponte
-[Bm]Então derrama sobre nós o [G]Teu Espírito, Senhor!
-[D]Então derrama sobre este lugar a [A]Tua unção e o [F#m]Teu [E7]poder!
-
-## (Refrão final, 2x)
-Hoje é dia de celebração! Vamos cantar Aleluia, Aleluia!
-Hoje é dia de celebração, é dia de festa, O céu inteiro está orando por nós!
-</script>
 
   <div class="nav-musica">
     <a class="inicio" href="index.html">🏠</a>

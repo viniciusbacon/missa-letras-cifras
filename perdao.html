@@ -35,7 +35,29 @@
     </div>
   </div>
 
-  <div class="aviso">Cifra editável — toque em "Editar cifra" pra mover os acordes de lugar. As mudanças ficam salvas neste navegador.</div>
+  <div class="aviso">Cifra editável — toque em "Editar cifra" no fim da página pra mover os acordes de lugar. As mudanças ficam salvas neste navegador.</div>
+
+  <div class="letra" id="letra-render"></div>
+
+<script type="text/plain" id="cifra-original">
+## 1ª vez — Senhor (tom C)
+[C]Senhor, tem [D]piedade,
+[G]Senhor, tem [C]piedade [Em]de [Am]nós [Am7]
+[Dm]Compadece-te, [Dm/C]
+[Bb]Senhor tem [F/A]piedade [G]
+
+## 2ª vez — Cristo (mesmo tom)
+[C]Cristo, tem [D]piedade,
+[G]Cristo tem [C]piedade [Em]de [Am]nós [Am7]
+[Dm]Compadece-te, [Dm/C]
+[Bb]Cristo tem [F/A]piedade [G][A]
+
+## 3ª vez — Senhor (sobe um tom inteiro)
+[D]Senhor, tem [E]piedade,
+[A]Senhor, tem [D]piedade [F#m]de [Bm]nós [Bm7]
+[Em]Compadece-te, [Em]
+[G]Senhor tem [A]piedade [D]
+</script>
 
   <div style="text-align:center;">
     <button class="botao-editar" type="button">✏️ Editar cifra</button>
@@ -47,32 +69,16 @@
       <button class="editor-restaurar" type="button">↺ Restaurar original</button>
       <button class="editor-copiar" type="button">📋 Copiar texto</button>
       <button class="editor-baixar" type="button">⬇️ Baixar .txt</button>
+      <button class="editor-solicitar" type="button">📮 Solicitar correção</button>
     </div>
     <div class="editor-status"></div>
     <div class="editor-ajuda">
       Escreva o acorde entre colchetes bem antes da sílaba onde ele entra, tipo <code>[D]Tua presença</code>.
       Pra mudar de lugar, é só mover o colchete dentro do texto. Linha começando com <code>## </code> vira
-      título de seção (Refrão, Verso...), linha em branco separa os blocos.
+      título de seção (Refrão, Verso...), linha em branco separa os blocos. O botão <strong>Solicitar correção</strong>
+      abre uma issue no GitHub já preenchida com o texto editado, pra eu revisar e publicar pra todo mundo.
     </div>
   </div>
-
-  <div class="letra" id="letra-render"></div>
-
-<script type="text/plain" id="cifra-original">
-## 1ª vez — Senhor
-[C]Senhor, tem piedade,
-[D]Senhor, tem piedade de [G]nós.
-[Am]Compadece-te, [F]Senhor, tem [C]piedade.
-
-## 2ª vez — Cristo
-[C]Cristo, tem piedade,
-[D]Cristo, tem piedade de [G]nós.
-[Am]Compadece-te, [F]Cristo, tem [C]piedade.
-
-## 3ª vez — Senhor (repete a 1ª)
-Senhor, tem piedade, Senhor, tem piedade de nós.
-Compadece-te, Senhor, tem piedade.
-</script>
 
   <div class="nav-musica">
     <a class="inicio" href="index.html">🏠</a>
