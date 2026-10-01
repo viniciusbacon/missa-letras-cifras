@@ -1,0 +1,343 @@
+:root{
+  --ouro: #d9b65e;
+  --ouro-claro: #f0d898;
+  --ouro-escuro: #a9802f;
+  --creme: #f3e8cf;
+  --bordo: #5a1414;
+  --fundo-1: #1c1208;
+  --fundo-2: #2e1c0e;
+  --fundo-card: #241509;
+}
+
+*{ box-sizing: border-box; }
+
+html,body{
+  margin:0;
+  padding:0;
+  min-height:100%;
+  background: radial-gradient(ellipse at top, var(--fundo-2) 0%, var(--fundo-1) 70%);
+  color: var(--creme);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+body{
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+.topo{
+  text-align:center;
+  padding: 22px 16px 10px;
+}
+
+.topo .selo{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid var(--ouro);
+  box-shadow:0 0 14px rgba(217,182,94,0.5);
+  margin-bottom:8px;
+}
+
+.topo h1{
+  margin:4px 0 2px;
+  color: var(--ouro-claro);
+  letter-spacing:1px;
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px rgba(217,182,94,0.25);
+}
+
+.topo .subtitulo{
+  color: var(--ouro-escuro);
+  font-size:0.95rem;
+  margin:0;
+}
+
+main{
+  flex:1;
+  width:100%;
+  max-width:680px;
+  margin:0 auto;
+  padding: 10px 18px 30px;
+}
+
+/* ---- Página inicial: lista de músicas ---- */
+.lista-musicas{
+  list-style:none;
+  margin: 18px 0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.lista-musicas a{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+  background: linear-gradient(135deg, var(--fundo-card), #1a0f06);
+  border:1px solid var(--ouro-escuro);
+  border-radius:12px;
+  padding:14px 16px;
+  color: var(--creme);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.lista-musicas a:active{
+  transform: scale(0.98);
+}
+
+.lista-musicas a:hover{
+  border-color: var(--ouro);
+  box-shadow: 0 0 14px rgba(217,182,94,0.25);
+}
+
+.lista-musicas .num{
+  font-size:1.3rem;
+  color: var(--ouro);
+  font-weight:bold;
+  min-width:28px;
+  text-align:center;
+}
+
+.lista-musicas .momento{
+  display:block;
+  font-size:0.78rem;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color: var(--ouro-escuro);
+  margin-bottom:2px;
+}
+
+.lista-musicas .titulo{
+  display:block;
+  font-size:1.08rem;
+  color: var(--ouro-claro);
+}
+
+.rodape-home{
+  text-align:center;
+  color: var(--ouro-escuro);
+  font-size:0.82rem;
+  margin-top: 26px;
+  line-height:1.6;
+}
+
+/* ---- Página de música ---- */
+.cabecalho-musica{
+  text-align:center;
+  border-bottom: 1px solid var(--ouro-escuro);
+  padding-bottom:14px;
+  margin-bottom:18px;
+}
+
+.cabecalho-musica .momento-tag{
+  display:inline-block;
+  background: var(--bordo);
+  color: var(--ouro-claro);
+  border: 1px solid var(--ouro-escuro);
+  border-radius: 20px;
+  padding: 3px 14px;
+  font-size:0.78rem;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.cabecalho-musica h2{
+  margin:4px 0 2px;
+  color: var(--ouro-claro);
+  font-size:1.45rem;
+}
+
+.cabecalho-musica .autor{
+  color: var(--ouro-escuro);
+  font-size:0.88rem;
+  margin:2px 0 12px;
+  font-style:italic;
+}
+
+.info-acordes{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:8px;
+}
+
+.badge{
+  background: var(--fundo-card);
+  border:1px solid var(--ouro-escuro);
+  color: var(--ouro);
+  border-radius:8px;
+  padding:4px 10px;
+  font-size:0.8rem;
+  font-family: "Courier New", monospace;
+}
+
+.link-ouvir{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin: 14px auto 0;
+  background: linear-gradient(135deg, var(--ouro), var(--ouro-escuro));
+  color: var(--fundo-1);
+  font-weight:bold;
+  text-decoration:none;
+  padding:10px 20px;
+  border-radius: 24px;
+  font-family: Georgia, serif;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  width:fit-content;
+}
+
+.link-ouvir-wrap{
+  text-align:center;
+}
+
+.aviso{
+  background: rgba(90,20,20,0.35);
+  border:1px solid var(--bordo);
+  color: var(--creme);
+  border-radius:10px;
+  padding:10px 14px;
+  font-size:0.82rem;
+  margin: 16px 0;
+  line-height:1.5;
+}
+
+.letra{
+  margin-top: 20px;
+  line-height: 1.9;
+}
+
+.secao{
+  margin-bottom: 22px;
+}
+
+.secao .rotulo{
+  color: var(--ouro-escuro);
+  text-transform:uppercase;
+  font-size:0.75rem;
+  letter-spacing:2px;
+  border-bottom: 1px dotted var(--ouro-escuro);
+  padding-bottom:4px;
+  margin-bottom:8px;
+}
+
+.linha{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 0 10px;
+}
+
+.acorde{
+  color: var(--ouro);
+  font-family: "Courier New", monospace;
+  font-weight:bold;
+  font-size:0.92rem;
+}
+
+/* ---- Transpositor ---- */
+.transpor{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin: 14px 0 4px;
+}
+
+.transpor .rotulo-transpor{
+  color: var(--ouro-escuro);
+  font-size:0.78rem;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.transpor button{
+  background: var(--fundo-card);
+  border:1px solid var(--ouro-escuro);
+  color: var(--ouro-claro);
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  font-size:1.1rem;
+  font-family: Georgia, serif;
+  cursor:pointer;
+  line-height:1;
+}
+
+.transpor button:active{
+  background: var(--ouro-escuro);
+  color: var(--fundo-1);
+}
+
+.transpor .t-atual{
+  font-family: "Courier New", monospace;
+  color: var(--ouro);
+  min-width:46px;
+  text-align:center;
+  font-size:0.95rem;
+}
+
+.transpor .t-reset{
+  width:auto;
+  border-radius:14px;
+  padding:0 10px;
+  font-size:0.72rem;
+  height:28px;
+  color: var(--ouro-escuro);
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.verso{
+  color: var(--creme);
+  font-size:1.08rem;
+  display:block;
+}
+
+/* ---- Navegação modo apresentação ---- */
+.nav-musica{
+  position: sticky;
+  bottom:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  margin-top: 28px;
+  padding: 12px 0 4px;
+  background: linear-gradient(to top, var(--fundo-1) 70%, transparent);
+}
+
+.nav-musica a{
+  flex:1;
+  text-align:center;
+  text-decoration:none;
+  color: var(--ouro-claro);
+  border:1px solid var(--ouro-escuro);
+  border-radius:10px;
+  padding:12px 8px;
+  font-size:0.9rem;
+  background: var(--fundo-card);
+}
+
+.nav-musica a.inicio{
+  flex:0 0 auto;
+  width:54px;
+  font-size:1.2rem;
+}
+
+.nav-musica a.desabilitado{
+  opacity:0.3;
+  pointer-events:none;
+}
+
+@media (min-width: 640px){
+  .topo h1{ font-size:1.9rem; }
+  .cabecalho-musica h2{ font-size:1.8rem; }
+  .verso{ font-size:1.18rem; }
+}
