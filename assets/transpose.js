@@ -44,10 +44,15 @@
     localStorage.setItem(chaveArmazenamento(), String(v));
   }
 
-  function aplicar(semitons){
+  var semitons = 0;
+
+  function aplicar(){
     var acordes = document.querySelectorAll('[data-acorde]');
     acordes.forEach(function(el){
-      el.textContent = transporAcorde(el.getAttribute('data-acorde'), semitons);
+      if(!el.hasAttribute('data-acorde-base')){
+        el.setAttribute('data-acorde-base', el.getAttribute('data-acorde'));
+      }
+      el.textContent = transporAcorde(el.getAttribute('data-acorde-base'), semitons);
     });
     var mostrador = document.querySelector('.t-atual');
     if(mostrador){
@@ -55,11 +60,13 @@
     }
   }
 
-  document.addEventListener('DOMContentLoaded', function(){
-    if(!document.querySelector('[data-acorde]')) return;
+  window.CifraTranspose = {
+    reaplicar: aplicar
+  };
 
-    var semitons = lerSemitons();
-    aplicar(semitons);
+  document.addEventListener('DOMContentLoaded', function(){
+    semitons = lerSemitons();
+    aplicar();
 
     var menos = document.querySelector('.t-menos');
     var mais = document.querySelector('.t-mais');
@@ -68,19 +75,19 @@
     if(menos) menos.addEventListener('click', function(){
       semitons -= 1;
       salvarSemitons(semitons);
-      aplicar(semitons);
+      aplicar();
     });
 
     if(mais) mais.addEventListener('click', function(){
       semitons += 1;
       salvarSemitons(semitons);
-      aplicar(semitons);
+      aplicar();
     });
 
     if(reset) reset.addEventListener('click', function(){
       semitons = 0;
       salvarSemitons(semitons);
-      aplicar(semitons);
+      aplicar();
     });
   });
 })();

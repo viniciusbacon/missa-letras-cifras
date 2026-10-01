@@ -15,15 +15,6 @@
     <p class="autor">"Dia de Festa" — Eliana Ribeiro (Ítalo Villar)</p>
     <div class="info-acordes">
       <span class="badge">Tom: <span class="acorde" data-acorde="Bm">Bm</span></span>
-      <span class="badge">
-        <span class="acorde" data-acorde="Bm">Bm</span>
-        <span class="acorde" data-acorde="G">G</span>
-        <span class="acorde" data-acorde="Em">Em</span>
-        <span class="acorde" data-acorde="D">D</span>
-        <span class="acorde" data-acorde="A">A</span>
-        <span class="acorde" data-acorde="F#m">F#m</span>
-        <span class="acorde" data-acorde="E7">E7</span>
-      </span>
     </div>
     <div class="transpor">
       <span class="rotulo-transpor">Transpor</span>
@@ -44,47 +35,49 @@
     </div>
   </div>
 
-  <div class="aviso">Cifra simplificada por trecho (acordes no início de cada linha) — confira a entrada de ouvido na gravação antes de tocar.</div>
+  <div class="aviso">Cifra editável — toque em "Editar cifra" pra mover os acordes de lugar. As mudanças ficam salvas neste navegador.</div>
 
-  <div class="letra">
-
-    <div class="secao">
-      <div class="rotulo">Refrão</div>
-      <div class="linha"><span class="acorde" data-acorde="Bm">Bm</span></div>
-      <span class="verso">Hoje é dia de celebração!</span>
-      <div class="linha"><span class="acorde" data-acorde="G">G</span><span class="acorde" data-acorde="Em">Em</span></div>
-      <span class="verso">Vamos cantar Aleluia, Aleluia!</span>
-      <div class="linha"><span class="acorde" data-acorde="D">D</span><span class="acorde" data-acorde="A">A</span></div>
-      <span class="verso">Hoje é dia de celebração, é dia de festa,</span>
-      <div class="linha"><span class="acorde" data-acorde="F#m">F#m</span><span class="acorde" data-acorde="E7">E7</span><span class="acorde" data-acorde="Bm">Bm</span></div>
-      <span class="verso">O céu inteiro está orando por nós!</span>
-    </div>
-
-    <div class="secao">
-      <div class="rotulo">Verso</div>
-      <div class="linha"><span class="acorde" data-acorde="G">G</span></div>
-      <span class="verso">Alegrei-me quando me disseram:</span>
-      <div class="linha"><span class="acorde" data-acorde="D">D</span><span class="acorde" data-acorde="A">A</span></div>
-      <span class="verso">Vamos para a casa do Senhor, pois Ele nos espera!</span>
-      <div class="linha"><span class="acorde" data-acorde="G">G</span><span class="acorde" data-acorde="F#m">F#m</span><span class="acorde" data-acorde="E7">E7</span></div>
-      <span class="verso">De braços abertos, com uma benção especial pra nós.</span>
-    </div>
-
-    <div class="secao">
-      <div class="rotulo">Ponte</div>
-      <div class="linha"><span class="acorde" data-acorde="Bm">Bm</span><span class="acorde" data-acorde="G">G</span></div>
-      <span class="verso">Então derrama sobre nós o Teu Espírito, Senhor!</span>
-      <div class="linha"><span class="acorde" data-acorde="D">D</span><span class="acorde" data-acorde="A">A</span><span class="acorde" data-acorde="F#m">F#m</span><span class="acorde" data-acorde="E7">E7</span></div>
-      <span class="verso">Então derrama sobre este lugar a Tua unção e o Teu poder!</span>
-    </div>
-
-    <div class="secao">
-      <div class="rotulo">(Refrão final 2x)</div>
-      <span class="verso">Hoje é dia de celebração! Vamos cantar Aleluia, Aleluia!</span>
-      <span class="verso">Hoje é dia de celebração, é dia de festa, O céu inteiro está orando por nós!</span>
-    </div>
-
+  <div style="text-align:center;">
+    <button class="botao-editar" type="button">✏️ Editar cifra</button>
   </div>
+
+  <div class="editor-wrap">
+    <textarea class="editor-textarea" spellcheck="false"></textarea>
+    <div class="editor-botoes">
+      <button class="editor-restaurar" type="button">↺ Restaurar original</button>
+      <button class="editor-copiar" type="button">📋 Copiar texto</button>
+      <button class="editor-baixar" type="button">⬇️ Baixar .txt</button>
+    </div>
+    <div class="editor-status"></div>
+    <div class="editor-ajuda">
+      Escreva o acorde entre colchetes bem antes da sílaba onde ele entra, tipo <code>[D]Tua presença</code>.
+      Pra mudar de lugar, é só mover o colchete dentro do texto. Linha começando com <code>## </code> vira
+      título de seção (Refrão, Verso...), linha em branco separa os blocos.
+    </div>
+  </div>
+
+  <div class="letra" id="letra-render"></div>
+
+<script type="text/plain" id="cifra-original">
+## Refrão
+[Bm]Hoje é dia de celebração!
+[G]Vamos cantar [Em]Aleluia, Aleluia!
+[D]Hoje é dia de celebração, é dia de [A]festa,
+[F#m]O céu inteiro está [E7]orando por [Bm]nós!
+
+## Verso
+[G]Alegrei-me quando me disseram:
+[D]Vamos para a casa do Senhor, pois Ele nos [A]espera!
+[G]De braços abertos, com uma benção [F#m]especial pra [E7]nós.
+
+## Ponte
+[Bm]Então derrama sobre nós o [G]Teu Espírito, Senhor!
+[D]Então derrama sobre este lugar a [A]Tua unção e o [F#m]Teu [E7]poder!
+
+## (Refrão final, 2x)
+Hoje é dia de celebração! Vamos cantar Aleluia, Aleluia!
+Hoje é dia de celebração, é dia de festa, O céu inteiro está orando por nós!
+</script>
 
   <div class="nav-musica">
     <a class="inicio" href="index.html">🏠</a>
@@ -94,6 +87,7 @@
 
 </main>
 <script src="assets/fontsize.js"></script>
+<script src="assets/cifra.js"></script>
 <script src="assets/transpose.js"></script>
 <script src="assets/nav.js"></script>
 </body>

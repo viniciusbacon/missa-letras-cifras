@@ -15,13 +15,6 @@
     <p class="autor">Santa Missa Jovem (Martin Valverde) — Ato Penitencial</p>
     <div class="info-acordes">
       <span class="badge">Tom: <span class="acorde" data-acorde="C">C</span></span>
-      <span class="badge">
-        <span class="acorde" data-acorde="C">C</span>
-        <span class="acorde" data-acorde="D">D</span>
-        <span class="acorde" data-acorde="G">G</span>
-        <span class="acorde" data-acorde="Am">Am</span>
-        <span class="acorde" data-acorde="F">F</span>
-      </span>
     </div>
     <div class="transpor">
       <span class="rotulo-transpor">Transpor</span>
@@ -42,37 +35,44 @@
     </div>
   </div>
 
-  <div class="aviso">Cifra simplificada por trecho — confira a entrada de ouvido na gravação antes de tocar.</div>
+  <div class="aviso">Cifra editável — toque em "Editar cifra" pra mover os acordes de lugar. As mudanças ficam salvas neste navegador.</div>
 
-  <div class="letra">
-
-    <div class="secao">
-      <div class="rotulo">1ª vez — Senhor</div>
-      <div class="linha"><span class="acorde" data-acorde="C">C</span></div>
-      <span class="verso">Senhor, tem piedade,</span>
-      <div class="linha"><span class="acorde" data-acorde="D">D</span><span class="acorde" data-acorde="G">G</span></div>
-      <span class="verso">Senhor, tem piedade de nós.</span>
-      <div class="linha"><span class="acorde" data-acorde="Am">Am</span><span class="acorde" data-acorde="F">F</span><span class="acorde" data-acorde="C">C</span></div>
-      <span class="verso">Compadece-te, Senhor, tem piedade.</span>
-    </div>
-
-    <div class="secao">
-      <div class="rotulo">2ª vez — Cristo</div>
-      <div class="linha"><span class="acorde" data-acorde="C">C</span></div>
-      <span class="verso">Cristo, tem piedade,</span>
-      <div class="linha"><span class="acorde" data-acorde="D">D</span><span class="acorde" data-acorde="G">G</span></div>
-      <span class="verso">Cristo, tem piedade de nós.</span>
-      <div class="linha"><span class="acorde" data-acorde="Am">Am</span><span class="acorde" data-acorde="F">F</span><span class="acorde" data-acorde="C">C</span></div>
-      <span class="verso">Compadece-te, Cristo, tem piedade.</span>
-    </div>
-
-    <div class="secao">
-      <div class="rotulo">3ª vez — Senhor (repete a 1ª)</div>
-      <span class="verso">Senhor, tem piedade, Senhor, tem piedade de nós.</span>
-      <span class="verso">Compadece-te, Senhor, tem piedade.</span>
-    </div>
-
+  <div style="text-align:center;">
+    <button class="botao-editar" type="button">✏️ Editar cifra</button>
   </div>
+
+  <div class="editor-wrap">
+    <textarea class="editor-textarea" spellcheck="false"></textarea>
+    <div class="editor-botoes">
+      <button class="editor-restaurar" type="button">↺ Restaurar original</button>
+      <button class="editor-copiar" type="button">📋 Copiar texto</button>
+      <button class="editor-baixar" type="button">⬇️ Baixar .txt</button>
+    </div>
+    <div class="editor-status"></div>
+    <div class="editor-ajuda">
+      Escreva o acorde entre colchetes bem antes da sílaba onde ele entra, tipo <code>[D]Tua presença</code>.
+      Pra mudar de lugar, é só mover o colchete dentro do texto. Linha começando com <code>## </code> vira
+      título de seção (Refrão, Verso...), linha em branco separa os blocos.
+    </div>
+  </div>
+
+  <div class="letra" id="letra-render"></div>
+
+<script type="text/plain" id="cifra-original">
+## 1ª vez — Senhor
+[C]Senhor, tem piedade,
+[D]Senhor, tem piedade de [G]nós.
+[Am]Compadece-te, [F]Senhor, tem [C]piedade.
+
+## 2ª vez — Cristo
+[C]Cristo, tem piedade,
+[D]Cristo, tem piedade de [G]nós.
+[Am]Compadece-te, [F]Cristo, tem [C]piedade.
+
+## 3ª vez — Senhor (repete a 1ª)
+Senhor, tem piedade, Senhor, tem piedade de nós.
+Compadece-te, Senhor, tem piedade.
+</script>
 
   <div class="nav-musica">
     <a class="inicio" href="index.html">🏠</a>
@@ -82,6 +82,7 @@
 
 </main>
 <script src="assets/fontsize.js"></script>
+<script src="assets/cifra.js"></script>
 <script src="assets/transpose.js"></script>
 <script src="assets/nav.js"></script>
 </body>

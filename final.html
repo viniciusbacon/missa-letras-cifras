@@ -15,14 +15,6 @@
     <p class="autor">Frei Gilson — Som do Monte</p>
     <div class="info-acordes">
       <span class="badge">Tom: <span class="acorde" data-acorde="E">E</span></span>
-      <span class="badge">
-        <span class="acorde" data-acorde="E">E</span>
-        <span class="acorde" data-acorde="F#m">F#m</span>
-        <span class="acorde" data-acorde="A9">A9</span>
-        <span class="acorde" data-acorde="B9">B9</span>
-        <span class="acorde" data-acorde="D">D</span>
-        <span class="acorde" data-acorde="E6">E6</span>
-      </span>
     </div>
     <div class="transpor">
       <span class="rotulo-transpor">Transpor</span>
@@ -43,61 +35,55 @@
     </div>
   </div>
 
-  <div class="aviso">Cifra simplificada por trecho — confira a entrada de ouvido na gravação antes de tocar.</div>
+  <div class="aviso">Cifra editável — toque em "Editar cifra" pra mover os acordes de lugar. As mudanças ficam salvas neste navegador.</div>
 
-  <div class="letra">
-
-    <div class="secao">
-      <div class="rotulo">Verso (a música começa aqui)</div>
-      <div class="linha"><span class="acorde" data-acorde="E">E</span></div>
-      <span class="verso">Eu vou,</span>
-      <div class="linha"><span class="acorde" data-acorde="D">D</span></div>
-      <span class="verso">Deixar-me guiar</span>
-      <div class="linha"><span class="acorde" data-acorde="E">E</span><span class="acorde" data-acorde="D">D</span></div>
-      <span class="verso">E me abandonar no Teu querer.</span>
-      <div class="linha"><span class="acorde" data-acorde="E">E</span></div>
-      <span class="verso">Preciso fazer a Tua vontade em minha vida.</span>
-    </div>
-
-    <div class="secao">
-      <div class="rotulo">Pré-refrão</div>
-      <div class="linha"><span class="acorde" data-acorde="F#m">F#m</span><span class="acorde" data-acorde="A9">A9</span></div>
-      <span class="verso">Para onde eu irei?</span>
-      <div class="linha"><span class="acorde" data-acorde="E">E</span></div>
-      <span class="verso">Em quem me apoiarei?</span>
-      <div class="linha"><span class="acorde" data-acorde="F#m">F#m</span><span class="acorde" data-acorde="A9">A9</span></div>
-      <span class="verso">Para onde eu irei?</span>
-      <div class="linha"><span class="acorde" data-acorde="E">E</span></div>
-      <span class="verso">Em quem me apoiarei?</span>
-    </div>
-
-    <div class="secao">
-      <div class="rotulo">Refrão</div>
-      <div class="linha"><span class="acorde" data-acorde="F#m">F#m</span><span class="acorde" data-acorde="A9">A9</span><span class="acorde" data-acorde="E">E</span><span class="acorde" data-acorde="E6">E6</span></div>
-      <span class="verso">Eu seguirei,</span>
-      <div class="linha"><span class="acorde" data-acorde="A9">A9</span><span class="acorde" data-acorde="E">E</span></div>
-      <span class="verso">Eu irei aonde fores, Senhor.</span>
-      <div class="linha"><span class="acorde" data-acorde="F#m">F#m</span></div>
-      <span class="verso">Eu seguirei,</span>
-      <div class="linha"><span class="acorde" data-acorde="A9">A9</span><span class="acorde" data-acorde="E">E</span></div>
-      <span class="verso">Eu irei aonde fores, Senhor.</span>
-      <div class="linha"><span class="acorde" data-acorde="F#m">F#m</span></div>
-      <span class="verso">Tua graça me basta,</span>
-      <div class="linha"><span class="acorde" data-acorde="A9">A9</span><span class="acorde" data-acorde="E">E</span></div>
-      <span class="verso">Teu amor me sustenta.</span>
-      <div class="linha"><span class="acorde" data-acorde="F#m">F#m</span></div>
-      <span class="verso">Tua graça me basta,</span>
-      <div class="linha"><span class="acorde" data-acorde="A9">A9</span><span class="acorde" data-acorde="E">E</span></div>
-      <span class="verso">Teu amor me sustenta.</span>
-    </div>
-
-    <div class="secao">
-      <div class="rotulo">(Repete Verso → Pré-refrão → Refrão, depois Ponte e fecha)</div>
-      <div class="linha"><span class="acorde" data-acorde="A9">A9</span><span class="acorde" data-acorde="C#m">C#m</span><span class="acorde" data-acorde="B9">B9</span><span class="acorde" data-acorde="F#m">F#m</span><span class="acorde" data-acorde="A9">A9</span><span class="acorde" data-acorde="E">E</span></div>
-      <span class="verso">Tua graça me basta, Teu amor me sustenta... (repete até fechar)</span>
-    </div>
-
+  <div style="text-align:center;">
+    <button class="botao-editar" type="button">✏️ Editar cifra</button>
   </div>
+
+  <div class="editor-wrap">
+    <textarea class="editor-textarea" spellcheck="false"></textarea>
+    <div class="editor-botoes">
+      <button class="editor-restaurar" type="button">↺ Restaurar original</button>
+      <button class="editor-copiar" type="button">📋 Copiar texto</button>
+      <button class="editor-baixar" type="button">⬇️ Baixar .txt</button>
+    </div>
+    <div class="editor-status"></div>
+    <div class="editor-ajuda">
+      Escreva o acorde entre colchetes bem antes da sílaba onde ele entra, tipo <code>[D]Tua presença</code>.
+      Pra mudar de lugar, é só mover o colchete dentro do texto. Linha começando com <code>## </code> vira
+      título de seção (Refrão, Verso...), linha em branco separa os blocos.
+    </div>
+  </div>
+
+  <div class="letra" id="letra-render"></div>
+
+<script type="text/plain" id="cifra-original">
+## Verso (a música começa aqui)
+[E]Eu vou,
+[D]Deixar-me guiar
+[E]E me abandonar no [D]Teu querer.
+[E]Preciso fazer a Tua vontade em minha vida.
+
+## Pré-refrão
+[F#m]Para onde eu [A9]irei?
+[E]Em quem me apoiarei?
+[F#m]Para onde eu [A9]irei?
+[E]Em quem me apoiarei?
+
+## Refrão
+[F#m]Eu [A9]segui[E]rei, [E6]
+[A9]Eu irei aonde fores, [E]Senhor.
+[F#m]Eu seguirei,
+[A9]Eu irei aonde fores, [E]Senhor.
+[F#m]Tua graça me basta,
+[A9]Teu amor me [E]sustenta.
+[F#m]Tua graça me basta,
+[A9]Teu amor me [E]sustenta.
+
+## (Repete Verso → Pré-refrão → Refrão, depois Ponte e fecha)
+[A9]Tua graça me basta, [C#m]Teu amor me [B9]sustenta... [F#m]eu [A9]seguirei, [E]Senhor.
+</script>
 
   <div class="nav-musica">
     <a class="inicio" href="index.html">🏠</a>
@@ -107,6 +93,7 @@
 
 </main>
 <script src="assets/fontsize.js"></script>
+<script src="assets/cifra.js"></script>
 <script src="assets/transpose.js"></script>
 <script src="assets/nav.js"></script>
 </body>
